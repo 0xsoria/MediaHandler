@@ -20,6 +20,7 @@
 		1513533D2442C0A3001F5FA1 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1513533C2442C0A3001F5FA1 /* MainTabBarController.m */; };
 		151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151353402442C6CC001F5FA1 /* SettingsViewController.m */; };
 		151353452442C82E001F5FA1 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151353442442C82E001F5FA1 /* MainNavigationController.m */; };
+		15135349244363B4001F5FA1 /* InputAuthorizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 15135348244363B4001F5FA1 /* InputAuthorizationChecker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,8 @@
 		151353402442C6CC001F5FA1 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		151353432442C82E001F5FA1 /* MainNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		151353442442C82E001F5FA1 /* MainNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
+		15135347244363B4001F5FA1 /* InputAuthorizationChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputAuthorizationChecker.h; sourceTree = "<group>"; };
+		15135348244363B4001F5FA1 /* InputAuthorizationChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputAuthorizationChecker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 				15135318243EA7BE001F5FA1 /* Assets.xcassets */,
 				151353332442A3D5001F5FA1 /* FilesViewController */,
 				1513531D243EA7BE001F5FA1 /* Info.plist */,
+				1513534A2443A8A1001F5FA1 /* InputAuthorizationChecker */,
 				1513531A243EA7BE001F5FA1 /* LaunchScreen.storyboard */,
 				1513533A2442B74D001F5FA1 /* Main */,
 				151353462442C849001F5FA1 /* MainNavigationController */,
@@ -188,6 +192,15 @@
 			path = MainNavigationController;
 			sourceTree = "<group>";
 		};
+		1513534A2443A8A1001F5FA1 /* InputAuthorizationChecker */ = {
+			isa = PBXGroup;
+			children = (
+				15135347244363B4001F5FA1 /* InputAuthorizationChecker.h */,
+				15135348244363B4001F5FA1 /* InputAuthorizationChecker.m */,
+			);
+			path = InputAuthorizationChecker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,6 +278,7 @@
 				1513533D2442C0A3001F5FA1 /* MainTabBarController.m in Sources */,
 				1513532D24427FC3001F5FA1 /* MyTableViewCell.m in Sources */,
 				151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */,
+				15135349244363B4001F5FA1 /* InputAuthorizationChecker.m in Sources */,
 				151353452442C82E001F5FA1 /* MainNavigationController.m in Sources */,
 				1513531F243EA7BE001F5FA1 /* main.m in Sources */,
 				15135311243EA7BC001F5FA1 /* SceneDelegate.m in Sources */,

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MyTableViewDataSource.h"
+#import "InputAuthorizationChecker.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property UITableView *myTableView;
 @property UILabel *emptyListLabel;
@@ -19,6 +20,8 @@
 - (void)tableViewDataVerification;
 - (void)addTableView;
 - (void)addEmptyListLabel;
+- (void)getMediaFromLibrary;
+- (void)authorizationStatus;
 
 @end
 

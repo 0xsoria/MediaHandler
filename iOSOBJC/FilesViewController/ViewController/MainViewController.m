@@ -59,10 +59,10 @@
 - (void)addNewItem {
     UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"What kind of file you want to add?" message:@"Choose what kind of file you would like to add." preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *videoAction = [UIAlertAction actionWithTitle:@"Video" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
+        [self authorizationStatus];
     }];
     UIAlertAction *imageAction = [UIAlertAction actionWithTitle:@"Image" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
+        [self authorizationStatus];
     }];
     UIAlertAction *audioAction = [UIAlertAction actionWithTitle:@"Audio" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
@@ -92,5 +92,48 @@
     
 }
 
+- (void)authorizationStatus {
+    InputAuthorizationChecker *checker = [[InputAuthorizationChecker alloc] init];
+    [checker photosAuthorizationStatus:^(BOOL completion) {
+        if (completion == YES) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self getMediaFromLibrary];
+            });
+        } else {
+            [self noAccessAlert];
+        }
+    }];
+}
+
+- (void)noAccessAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"You do not have access to the photo library, to give the access please go to settings. " preferredStyle:UIAlertControllerStyleAlert];
+    
+    NSDictionary *dict;
+    
+    UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:@"Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSURL *urlFromString = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        [UIApplication.sharedApplication openURL:urlFromString options:dict completionHandler:nil];
+        
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    
+    [alert addAction:settingsAction];
+    [alert addAction:cancel];
+    
+    [self.navigationController presentViewController:alert animated:TRUE completion:nil];
+    
+}
+
+- (void)getMediaFromLibrary {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    NSLog(@"oi");
+}
 
 @end
