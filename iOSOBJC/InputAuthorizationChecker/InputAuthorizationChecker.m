@@ -7,7 +7,6 @@
 //
 
 #import "InputAuthorizationChecker.h"
-#import <Photos/Photos.h>
 
 @implementation InputAuthorizationChecker
 
@@ -63,11 +62,52 @@
     }
 }
 
+- (void)cameraAuthorizationStatus:(MediaInputType)mediaType completion:(void (^ __nullable)(BOOL))completion {
+    if (mediaType == MediaInputTypeVideo) {
+        switch ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo]) {
+            case AVAuthorizationStatusNotDetermined: {
+                [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+                        if (granted) {
+                            completion(YES);
+                        } else {
+                            completion(NO);
+                        }
+                    }];
+                }
+                break;
+            case AVAuthorizationStatusRestricted:
+                completion(NO);
+                break;
+            case AVAuthorizationStatusDenied:
+                completion(NO);
+                break;
+            case AVAuthorizationStatusAuthorized:
+                completion(YES);
+                break;
+        }
+    } else if (mediaType == MediaInputTypePhoto) {
+        switch ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio]) {
+            case AVAuthorizationStatusNotDetermined: {
+                [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+                        if (granted) {
+                            completion(YES);
+                        } else {
+                            completion(NO);
+                        }
+                    }];
+                }
+                break;
+            case AVAuthorizationStatusRestricted:
+                completion(NO);
+                break;
+            case AVAuthorizationStatusDenied:
+                completion(NO);
+                break;
+            case AVAuthorizationStatusAuthorized:
+                completion(YES);
+                break;
+        }
+    }
+}
+
 @end
-
-
-typedef enum InputType {
-    audio,
-    video,
-    
-} InputType;

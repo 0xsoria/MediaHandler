@@ -21,6 +21,7 @@
 		151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151353402442C6CC001F5FA1 /* SettingsViewController.m */; };
 		151353452442C82E001F5FA1 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151353442442C82E001F5FA1 /* MainNavigationController.m */; };
 		15135349244363B4001F5FA1 /* InputAuthorizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 15135348244363B4001F5FA1 /* InputAuthorizationChecker.m */; };
+		1577517F2443D9BC0098883A /* AVSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1577517E2443D9BC0098883A /* AVSession.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		151353442442C82E001F5FA1 /* MainNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		15135347244363B4001F5FA1 /* InputAuthorizationChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputAuthorizationChecker.h; sourceTree = "<group>"; };
 		15135348244363B4001F5FA1 /* InputAuthorizationChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputAuthorizationChecker.m; sourceTree = "<group>"; };
+		1577517D2443D9BC0098883A /* AVSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVSession.h; sourceTree = "<group>"; };
+		1577517E2443D9BC0098883A /* AVSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVSession.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				151353462442C849001F5FA1 /* MainNavigationController */,
 				151353392442B737001F5FA1 /* SceneAndAppDelegate */,
 				151353422442C6D1001F5FA1 /* SettingsViewController */,
+				1577517D2443D9BC0098883A /* AVSession.h */,
+				1577517E2443D9BC0098883A /* AVSession.m */,
 			);
 			path = iOSOBJC;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				1513532A24427046001F5FA1 /* MyTableViewDataSource.m in Sources */,
 				15135314243EA7BC001F5FA1 /* MainViewController.m in Sources */,
 				1513530E243EA7BC001F5FA1 /* AppDelegate.m in Sources */,
+				1577517F2443D9BC0098883A /* AVSession.m in Sources */,
 				151353372442B5EF001F5FA1 /* MyFilesModel.m in Sources */,
 				1513533124429309001F5FA1 /* MyFilesManager.m in Sources */,
 				1513533D2442C0A3001F5FA1 /* MainTabBarController.m in Sources */,

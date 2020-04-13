@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
+#import <Photos/Photos.h>
 
 //@protocol InputAuthorizerDelegate <NSObject>
 //@optional
@@ -17,6 +18,11 @@
 ////- (void)something:(id)something didFailWithError:(NSError *)error;
 //@end
 
+typedef NS_ENUM (NSInteger, MediaInputType) {
+    MediaInputTypePhoto,
+    MediaInputTypeVideo,
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface InputAuthorizationChecker : NSObject
@@ -24,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)inputAuthorizationChecker:(AVMediaType)mediaType completion:(void (^ __nullable)(void))completion;
 - (AVAuthorizationStatus)inputAuthorizationChecker:(AVMediaType)mediaType;
 - (void)photosAuthorizationStatus:(void (^ __nullable)(BOOL))completion;
+- (void)cameraAuthorizationStatus:(MediaInputType)mediaType completion:(void (^ __nullable)(BOOL))completion;
 
 @end
 

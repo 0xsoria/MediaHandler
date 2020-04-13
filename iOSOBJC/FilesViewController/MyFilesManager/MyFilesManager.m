@@ -10,4 +10,10 @@
 
 @implementation MyFilesManager
 
+- (void)saveFile:(NSString *)fileName {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *myURL = [fileManager URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+    [myURL URLByAppendingPathComponent:fileName];
+}
+
 @end

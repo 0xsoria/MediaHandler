@@ -92,6 +92,10 @@
     
 }
 
+- (void)cameraInputStatus {
+    
+}
+
 - (void)authorizationStatus {
     InputAuthorizationChecker *checker = [[InputAuthorizationChecker alloc] init];
     [checker photosAuthorizationStatus:^(BOOL completion) {
