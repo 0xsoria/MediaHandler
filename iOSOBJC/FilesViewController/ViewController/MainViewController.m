@@ -68,10 +68,10 @@
         
     }];
     UIAlertAction *photoAction = [UIAlertAction actionWithTitle:@"Take Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
+        [self cameraInputStatus:MediaInputTypePhoto];
     }];
     UIAlertAction *recordVideoAction = [UIAlertAction actionWithTitle:@"Record Video" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
+        [self cameraInputStatus:MediaInputTypeVideo];
     }];
     UIAlertAction *recordAudioAction = [UIAlertAction actionWithTitle:@"Record Audio" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
@@ -92,8 +92,18 @@
     
 }
 
-- (void)cameraInputStatus {
-    
+- (void)cameraInputStatus:(MediaInputType)mediaInput {
+    InputAuthorizationChecker *checker = [[InputAuthorizationChecker alloc] init];
+    [checker cameraAuthorizationStatus:mediaInput completion:^(BOOL completion) {
+        if (completion == YES) {
+            if (mediaInput == MediaInputTypeVideo || MediaInputTypePhoto) {
+                PhotoVideoViewController *sessionViewController = [PhotoVideoViewController alloc];
+                [self.navigationController presentViewController:sessionViewController animated:YES completion:nil];
+            }
+        } else {
+            [self noAccessAlert];
+        }
+    }];
 }
 
 - (void)authorizationStatus {

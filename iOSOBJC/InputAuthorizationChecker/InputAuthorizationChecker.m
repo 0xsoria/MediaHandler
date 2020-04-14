@@ -85,7 +85,7 @@
                 completion(YES);
                 break;
         }
-    } else if (mediaType == MediaInputTypePhoto) {
+    } else if (mediaType == MediaInputTypeAudio) {
         switch ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio]) {
             case AVAuthorizationStatusNotDetermined: {
                 [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
@@ -107,6 +107,8 @@
                 completion(YES);
                 break;
         }
+    } else if (mediaType == MediaInputTypeAudio) {
+        
     }
 }
 

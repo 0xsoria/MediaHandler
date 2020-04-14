@@ -21,6 +21,7 @@
 typedef NS_ENUM (NSInteger, MediaInputType) {
     MediaInputTypePhoto,
     MediaInputTypeVideo,
+    MediaInputTypeAudio
 };
 
 NS_ASSUME_NONNULL_BEGIN

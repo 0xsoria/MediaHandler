@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MyTableViewDataSource.h"
 #import "InputAuthorizationChecker.h"
+#import "PhotoVideoViewController.h"
 
 @interface MainViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
