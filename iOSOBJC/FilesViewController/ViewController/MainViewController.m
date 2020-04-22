@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "MyTableViewDataSource.h"
+#import "AudioPlayerViewController.h"
 
 @interface MainViewController ()
 
@@ -58,6 +59,10 @@
 
 - (void)addNewItem {
     UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"What kind of file you want to add?" message:@"Choose what kind of file you would like to add." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *downloadAudio = [UIAlertAction actionWithTitle:@"Download Audio File" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self downloadFile];
+    }];
+    
     UIAlertAction *videoAction = [UIAlertAction actionWithTitle:@"Video" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self authorizationStatus];
     }];
@@ -80,6 +85,7 @@
         
     }];
     
+    [sheet addAction:downloadAudio];
     [sheet addAction:imageAction];
     [sheet addAction:videoAction];
     [sheet addAction:audioAction];
@@ -116,6 +122,29 @@
         } else {
             [self noAccessAlert];
         }
+    }];
+}
+
+- (void)downloadFile {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Place the url for the audio file" message:@"URL for file" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"URL";
+    }];
+    
+    UIAlertAction *downloadAction = [UIAlertAction actionWithTitle:@"Play" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        AudioPlayerViewController *playerViewController = [[AudioPlayerViewController alloc] init];
+        playerViewController.fileURL = alert.textFields.firstObject.text;
+        [self.navigationController pushViewController:playerViewController animated:YES];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [alert addAction:downloadAction];
+    [alert addAction:cancelAction];
+    
+    [self.navigationController presentViewController:alert animated:YES completion:^{
+        
     }];
 }
 

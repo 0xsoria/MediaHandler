@@ -43,16 +43,28 @@
         [self.session addInput:videoDeviceInput];
         self.videoDeviceInput = videoDeviceInput;
         
-        
         dispatch_async(dispatch_get_main_queue(), ^{
-            
             AVCaptureVideoOrientation initialVideoOrientation = AVCaptureVideoOrientationPortrait;
             if (windowOrientation != UIInterfaceOrientationUnknown) {
                 initialVideoOrientation = (AVCaptureVideoOrientation) windowOrientation;
             }
-            
+            [self.delegate setupOrientation:&initialVideoOrientation];
         });
+    } else {
+        self.setupResult = AVCamSetupResultSessionConfigurationFailed;
+        [self.session commitConfiguration];
+        return;
     }
+    
+    AVCaptureDevice *audioDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio];
+    AVCaptureDeviceInput *audioDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:audioDevice error:&error];
+    
+    if ([self.session canAddInput:audioDeviceInput]) {
+        [self.session addInput:audioDeviceInput];
+    } else {
+        //cannot add audio device input;
+    }
+    
     
     
 }

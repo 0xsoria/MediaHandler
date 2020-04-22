@@ -21,8 +21,12 @@
 		151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151353402442C6CC001F5FA1 /* SettingsViewController.m */; };
 		151353452442C82E001F5FA1 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151353442442C82E001F5FA1 /* MainNavigationController.m */; };
 		15135349244363B4001F5FA1 /* InputAuthorizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 15135348244363B4001F5FA1 /* InputAuthorizationChecker.m */; };
+		15422ADE24495CFF004A5B64 /* AudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */; };
+		15422AE224495D27004A5B64 /* AudioDownloaderAndPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */; };
 		1577517F2443D9BC0098883A /* AVSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1577517E2443D9BC0098883A /* AVSession.m */; };
 		15775182244561CA0098883A /* PhotoVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15775181244561CA0098883A /* PhotoVideoViewController.m */; };
+		15D892D32446A9980004CF99 /* AVPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D892D22446A9980004CF99 /* AVPhotoView.m */; };
+		15DF69E2244FE297006F0D7F /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DF69E1244FE297006F0D7F /* Service.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,10 +57,18 @@
 		151353442442C82E001F5FA1 /* MainNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		15135347244363B4001F5FA1 /* InputAuthorizationChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputAuthorizationChecker.h; sourceTree = "<group>"; };
 		15135348244363B4001F5FA1 /* InputAuthorizationChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputAuthorizationChecker.m; sourceTree = "<group>"; };
+		15422ADC24495CFF004A5B64 /* AudioPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerViewController.h; sourceTree = "<group>"; };
+		15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerViewController.m; sourceTree = "<group>"; };
+		15422AE024495D27004A5B64 /* AudioDownloaderAndPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioDownloaderAndPlayer.h; sourceTree = "<group>"; };
+		15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioDownloaderAndPlayer.m; sourceTree = "<group>"; };
 		1577517D2443D9BC0098883A /* AVSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVSession.h; sourceTree = "<group>"; };
 		1577517E2443D9BC0098883A /* AVSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVSession.m; sourceTree = "<group>"; };
 		15775180244561CA0098883A /* PhotoVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoVideoViewController.h; sourceTree = "<group>"; };
 		15775181244561CA0098883A /* PhotoVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoVideoViewController.m; sourceTree = "<group>"; };
+		15D892D12446A9980004CF99 /* AVPhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPhotoView.h; sourceTree = "<group>"; };
+		15D892D22446A9980004CF99 /* AVPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPhotoView.m; sourceTree = "<group>"; };
+		15DF69E0244FE297006F0D7F /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		15DF69E1244FE297006F0D7F /* Service.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,7 @@
 		1513530B243EA7BC001F5FA1 /* iOSOBJC */ = {
 			isa = PBXGroup;
 			children = (
+				15DF69DF244FE27A006F0D7F /* Service */,
 				15135318243EA7BE001F5FA1 /* Assets.xcassets */,
 				151353332442A3D5001F5FA1 /* FilesViewController */,
 				1513531D243EA7BE001F5FA1 /* Info.plist */,
@@ -99,6 +112,7 @@
 				151353392442B737001F5FA1 /* SceneAndAppDelegate */,
 				151353422442C6D1001F5FA1 /* SettingsViewController */,
 				15775183244567F60098883A /* PhotoVideoViewController */,
+				15422ADF24495D0A004A5B64 /* AudioPlayer */,
 			);
 			path = iOSOBJC;
 			sourceTree = "<group>";
@@ -208,11 +222,24 @@
 			path = InputAuthorizationChecker;
 			sourceTree = "<group>";
 		};
+		15422ADF24495D0A004A5B64 /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				15422ADC24495CFF004A5B64 /* AudioPlayerViewController.h */,
+				15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */,
+				15422AE024495D27004A5B64 /* AudioDownloaderAndPlayer.h */,
+				15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */,
+			);
+			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
 		15775183244567F60098883A /* PhotoVideoViewController */ = {
 			isa = PBXGroup;
 			children = (
 				15775184244568070098883A /* AVSession */,
 				15775185244568130098883A /* ViewController */,
+				15D892D12446A9980004CF99 /* AVPhotoView.h */,
+				15D892D22446A9980004CF99 /* AVPhotoView.m */,
 			);
 			path = PhotoVideoViewController;
 			sourceTree = "<group>";
@@ -233,6 +260,15 @@
 				15775181244561CA0098883A /* PhotoVideoViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		15DF69DF244FE27A006F0D7F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				15DF69E0244FE297006F0D7F /* Service.h */,
+				15DF69E1244FE297006F0D7F /* Service.m */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,16 +344,20 @@
 				15135314243EA7BC001F5FA1 /* MainViewController.m in Sources */,
 				1513530E243EA7BC001F5FA1 /* AppDelegate.m in Sources */,
 				1577517F2443D9BC0098883A /* AVSession.m in Sources */,
+				15422ADE24495CFF004A5B64 /* AudioPlayerViewController.m in Sources */,
 				151353372442B5EF001F5FA1 /* MyFilesModel.m in Sources */,
 				1513533124429309001F5FA1 /* MyFilesManager.m in Sources */,
 				1513533D2442C0A3001F5FA1 /* MainTabBarController.m in Sources */,
 				1513532D24427FC3001F5FA1 /* MyTableViewCell.m in Sources */,
+				15422AE224495D27004A5B64 /* AudioDownloaderAndPlayer.m in Sources */,
 				151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */,
 				15135349244363B4001F5FA1 /* InputAuthorizationChecker.m in Sources */,
 				151353452442C82E001F5FA1 /* MainNavigationController.m in Sources */,
+				15D892D32446A9980004CF99 /* AVPhotoView.m in Sources */,
 				1513531F243EA7BE001F5FA1 /* main.m in Sources */,
 				15135311243EA7BC001F5FA1 /* SceneDelegate.m in Sources */,
 				15775182244561CA0098883A /* PhotoVideoViewController.m in Sources */,
+				15DF69E2244FE297006F0D7F /* Service.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

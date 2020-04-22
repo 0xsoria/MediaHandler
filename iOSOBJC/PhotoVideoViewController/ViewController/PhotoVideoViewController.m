@@ -7,6 +7,7 @@
 //
 
 #import "PhotoVideoViewController.h"
+#import "AVSession.h"
 
 @interface PhotoVideoViewController ()
 
@@ -16,6 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.myAVSession.delegate = self;
+}
+
+- (void)setupOrientation:(AVCaptureVideoOrientation *)orientation {
+    self.videoPreviewLayer.connection.videoOrientation = *(orientation);
 }
 
 @end

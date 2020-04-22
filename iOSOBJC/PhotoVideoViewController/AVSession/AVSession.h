@@ -18,12 +18,19 @@ typedef NS_ENUM(NSInteger, AVCamSetupResult) {
     AVCamSetupResultSessionConfigurationFailed
 };
 
+@protocol InputAuthorizerDelegate <NSObject>
+@optional
+//- (void)something:(id)something didFinishLoadingItem:(id)item;
+//- (void)something:(id)something didFailWithError:(NSError *)error;
+- (void)setupOrientation: (AVCaptureVideoOrientation *)orientation;
+@end
+
 @interface AVSession : NSObject
 
 @property AVCamSetupResult setupResult;
 @property AVCaptureSession *session;
 @property AVCaptureDeviceInput *videoDeviceInput;
-
+@property (nonatomic, weak) id<InputAuthorizerDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END
