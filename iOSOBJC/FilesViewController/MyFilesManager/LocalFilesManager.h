@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MyService.h"
+#import "HTTPServiceDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MyFilesManager : NSObject
+@interface LocalFilesManager : NSObject <HTTPServiceDelegate>
 
-- (void)saveFile:(NSString *)fileName;
+- (instancetype)init;
+- (void)saveFile:(NSURL *)fileURL;
+- (void)downloadFileFromServiceWithURL:(NSString *)url;
 
 @end
 

@@ -15,7 +15,7 @@
 		1513531F243EA7BE001F5FA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1513531E243EA7BE001F5FA1 /* main.m */; };
 		1513532A24427046001F5FA1 /* MyTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1513532924427046001F5FA1 /* MyTableViewDataSource.m */; };
 		1513532D24427FC3001F5FA1 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1513532C24427FC3001F5FA1 /* MyTableViewCell.m */; };
-		1513533124429309001F5FA1 /* MyFilesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1513533024429309001F5FA1 /* MyFilesManager.m */; };
+		1513533124429309001F5FA1 /* LocalFilesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1513533024429309001F5FA1 /* LocalFilesManager.m */; };
 		151353372442B5EF001F5FA1 /* MyFilesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 151353362442B5EF001F5FA1 /* MyFilesModel.m */; };
 		1513533D2442C0A3001F5FA1 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1513533C2442C0A3001F5FA1 /* MainTabBarController.m */; };
 		151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151353402442C6CC001F5FA1 /* SettingsViewController.m */; };
@@ -23,10 +23,13 @@
 		15135349244363B4001F5FA1 /* InputAuthorizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 15135348244363B4001F5FA1 /* InputAuthorizationChecker.m */; };
 		15422ADE24495CFF004A5B64 /* AudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */; };
 		15422AE224495D27004A5B64 /* AudioDownloaderAndPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */; };
+		155CEA5E2452772500FC9E56 /* HTTPServiceProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 155CEA5D2452772500FC9E56 /* HTTPServiceProtocol.m */; };
+		155CEA9B24560B0B00FC9E56 /* HTTPServiceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 155CEA9A24560B0B00FC9E56 /* HTTPServiceDelegate.m */; };
+		155CEA9E2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 155CEA9D2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.m */; };
 		1577517F2443D9BC0098883A /* AVSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1577517E2443D9BC0098883A /* AVSession.m */; };
 		15775182244561CA0098883A /* PhotoVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15775181244561CA0098883A /* PhotoVideoViewController.m */; };
 		15D892D32446A9980004CF99 /* AVPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D892D22446A9980004CF99 /* AVPhotoView.m */; };
-		15DF69E2244FE297006F0D7F /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DF69E1244FE297006F0D7F /* Service.m */; };
+		15DF69E2244FE297006F0D7F /* MyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DF69E1244FE297006F0D7F /* MyService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +48,8 @@
 		1513532924427046001F5FA1 /* MyTableViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTableViewDataSource.m; sourceTree = "<group>"; };
 		1513532B24427FC3001F5FA1 /* MyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
 		1513532C24427FC3001F5FA1 /* MyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
-		1513532F24429309001F5FA1 /* MyFilesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFilesManager.h; sourceTree = "<group>"; };
-		1513533024429309001F5FA1 /* MyFilesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFilesManager.m; sourceTree = "<group>"; };
+		1513532F24429309001F5FA1 /* LocalFilesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalFilesManager.h; sourceTree = "<group>"; };
+		1513533024429309001F5FA1 /* LocalFilesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalFilesManager.m; sourceTree = "<group>"; };
 		151353352442B5EF001F5FA1 /* MyFilesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFilesModel.h; sourceTree = "<group>"; };
 		151353362442B5EF001F5FA1 /* MyFilesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFilesModel.m; sourceTree = "<group>"; };
 		1513533B2442C0A3001F5FA1 /* MainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
@@ -61,14 +64,20 @@
 		15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerViewController.m; sourceTree = "<group>"; };
 		15422AE024495D27004A5B64 /* AudioDownloaderAndPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioDownloaderAndPlayer.h; sourceTree = "<group>"; };
 		15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioDownloaderAndPlayer.m; sourceTree = "<group>"; };
+		155CEA5C2452772500FC9E56 /* HTTPServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPServiceProtocol.h; sourceTree = "<group>"; };
+		155CEA5D2452772500FC9E56 /* HTTPServiceProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPServiceProtocol.m; sourceTree = "<group>"; };
+		155CEA9924560B0B00FC9E56 /* HTTPServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPServiceDelegate.h; sourceTree = "<group>"; };
+		155CEA9A24560B0B00FC9E56 /* HTTPServiceDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPServiceDelegate.m; sourceTree = "<group>"; };
+		155CEA9C2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalFilesManagerProgressDelegate.h; sourceTree = "<group>"; };
+		155CEA9D2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalFilesManagerProgressDelegate.m; sourceTree = "<group>"; };
 		1577517D2443D9BC0098883A /* AVSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVSession.h; sourceTree = "<group>"; };
 		1577517E2443D9BC0098883A /* AVSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVSession.m; sourceTree = "<group>"; };
 		15775180244561CA0098883A /* PhotoVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoVideoViewController.h; sourceTree = "<group>"; };
 		15775181244561CA0098883A /* PhotoVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoVideoViewController.m; sourceTree = "<group>"; };
 		15D892D12446A9980004CF99 /* AVPhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPhotoView.h; sourceTree = "<group>"; };
 		15D892D22446A9980004CF99 /* AVPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPhotoView.m; sourceTree = "<group>"; };
-		15DF69E0244FE297006F0D7F /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
-		15DF69E1244FE297006F0D7F /* Service.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		15DF69E0244FE297006F0D7F /* MyService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyService.h; sourceTree = "<group>"; };
+		15DF69E1244FE297006F0D7F /* MyService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +140,10 @@
 		151353322442930E001F5FA1 /* MyFilesManager */ = {
 			isa = PBXGroup;
 			children = (
-				1513532F24429309001F5FA1 /* MyFilesManager.h */,
-				1513533024429309001F5FA1 /* MyFilesManager.m */,
+				1513532F24429309001F5FA1 /* LocalFilesManager.h */,
+				1513533024429309001F5FA1 /* LocalFilesManager.m */,
+				155CEA9C2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.h */,
+				155CEA9D2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.m */,
 			);
 			path = MyFilesManager;
 			sourceTree = "<group>";
@@ -265,8 +276,12 @@
 		15DF69DF244FE27A006F0D7F /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				15DF69E0244FE297006F0D7F /* Service.h */,
-				15DF69E1244FE297006F0D7F /* Service.m */,
+				15DF69E0244FE297006F0D7F /* MyService.h */,
+				15DF69E1244FE297006F0D7F /* MyService.m */,
+				155CEA5C2452772500FC9E56 /* HTTPServiceProtocol.h */,
+				155CEA5D2452772500FC9E56 /* HTTPServiceProtocol.m */,
+				155CEA9924560B0B00FC9E56 /* HTTPServiceDelegate.h */,
+				155CEA9A24560B0B00FC9E56 /* HTTPServiceDelegate.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -340,15 +355,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				155CEA9B24560B0B00FC9E56 /* HTTPServiceDelegate.m in Sources */,
 				1513532A24427046001F5FA1 /* MyTableViewDataSource.m in Sources */,
 				15135314243EA7BC001F5FA1 /* MainViewController.m in Sources */,
 				1513530E243EA7BC001F5FA1 /* AppDelegate.m in Sources */,
 				1577517F2443D9BC0098883A /* AVSession.m in Sources */,
 				15422ADE24495CFF004A5B64 /* AudioPlayerViewController.m in Sources */,
 				151353372442B5EF001F5FA1 /* MyFilesModel.m in Sources */,
-				1513533124429309001F5FA1 /* MyFilesManager.m in Sources */,
+				1513533124429309001F5FA1 /* LocalFilesManager.m in Sources */,
 				1513533D2442C0A3001F5FA1 /* MainTabBarController.m in Sources */,
 				1513532D24427FC3001F5FA1 /* MyTableViewCell.m in Sources */,
+				155CEA9E2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.m in Sources */,
+				155CEA5E2452772500FC9E56 /* HTTPServiceProtocol.m in Sources */,
 				15422AE224495D27004A5B64 /* AudioDownloaderAndPlayer.m in Sources */,
 				151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */,
 				15135349244363B4001F5FA1 /* InputAuthorizationChecker.m in Sources */,
@@ -357,7 +375,7 @@
 				1513531F243EA7BE001F5FA1 /* main.m in Sources */,
 				15135311243EA7BC001F5FA1 /* SceneDelegate.m in Sources */,
 				15775182244561CA0098883A /* PhotoVideoViewController.m in Sources */,
-				15DF69E2244FE297006F0D7F /* Service.m in Sources */,
+				15DF69E2244FE297006F0D7F /* MyService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "MyTableViewDataSource.h"
 #import "AudioPlayerViewController.h"
+#import "LocalFilesManager.h"
 
 @interface MainViewController ()
 
@@ -131,10 +132,9 @@
         textField.placeholder = @"URL";
     }];
     
-    UIAlertAction *downloadAction = [UIAlertAction actionWithTitle:@"Play" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        AudioPlayerViewController *playerViewController = [[AudioPlayerViewController alloc] init];
-        playerViewController.fileURL = alert.textFields.firstObject.text;
-        [self.navigationController pushViewController:playerViewController animated:YES];
+    UIAlertAction *downloadAction = [UIAlertAction actionWithTitle:@"Download" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        LocalFilesManager *filesManager = [[LocalFilesManager alloc] init];
+        [filesManager downloadFileFromServiceWithURL:alert.textFields.firstObject.text];
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
