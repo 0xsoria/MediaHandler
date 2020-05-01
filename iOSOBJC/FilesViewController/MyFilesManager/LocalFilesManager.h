@@ -15,8 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LocalFilesManager : NSObject <HTTPServiceDelegate>
 
 - (instancetype)init;
-- (void)saveFile:(NSURL *)fileURL;
+- (void)saveFile:(NSURL *)fileURL withFileName:(NSString *)fileName;
 - (void)downloadFileFromServiceWithURL:(NSString *)url;
+- (NSArray *)loadFiles;
 
 @end
 

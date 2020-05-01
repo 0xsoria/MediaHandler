@@ -12,8 +12,8 @@
 
 @synthesize session;
 
-- (void)fileDownloader:(NSString *_Nonnull)withURLString; {
-    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:@"FileDownloader"];
+- (void)fileDownloader:(NSString *_Nonnull)withURLString andFileName:(NSString *)fileName {
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:fileName];
     sessionConfiguration.sessionSendsLaunchEvents = YES;
     [sessionConfiguration setDiscretionary:YES];
     
@@ -42,7 +42,7 @@
 }
 
 - (void)URLSession:(nonnull NSURLSession *)session downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(nonnull NSURL *)location {
-    [self.delegate didFinishDownloadingFileToURL:location];
+    [self.delegate didFinishDownloadingFileToURL:location withName:session.configuration.identifier];
     [session finishTasksAndInvalidate];
 }
 

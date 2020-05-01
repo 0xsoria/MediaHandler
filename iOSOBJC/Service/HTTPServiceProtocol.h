@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol HTTPServiceProtocol <NSObject>
 
 @property NSURLSession * _Nonnull session;
-- (void)fileDownloader:(NSString *_Nonnull)withURLString;
+- (void)fileDownloader:(NSString *_Nonnull)withURLString andFileName:(NSString *)fileName;
 
 @end
 

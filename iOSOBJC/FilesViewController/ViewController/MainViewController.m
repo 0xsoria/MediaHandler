@@ -10,6 +10,7 @@
 #import "MyTableViewDataSource.h"
 #import "AudioPlayerViewController.h"
 #import "LocalFilesManager.h"
+#import "MyTableViewCell.h"
 
 @interface MainViewController ()
 
@@ -19,9 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataSource = [MyTableViewDataSource alloc];
-    self.myTableView.dataSource = self.dataSource;
     
+    self.myTableView = [[UITableView alloc] init];
+    [self.myTableView registerClass:MyTableViewCell.self forCellReuseIdentifier:@"files"];
     UIBarButtonItem *myRightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target: self action:@selector(addNewItem)];
     [self.navigationItem setRightBarButtonItem:myRightBarButtonItem];
     
@@ -31,7 +32,8 @@
 
 - (void)addTableView {
     [self.view addSubview:self.myTableView];
-    self.myTableView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.myTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
     [self.myTableView.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
     [self.myTableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
     [self.myTableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
@@ -39,6 +41,12 @@
 }
 
 - (void)tableViewDataVerification {
+    LocalFilesManager *filesManager = [[LocalFilesManager alloc] init];
+    NSArray *files = [filesManager loadFiles];
+    self.dataSource = [[MyTableViewDataSource alloc] initWithItems:files];
+    self.myTableView.dataSource = self.dataSource;
+    self.myTableView.delegate = self.dataSource;
+    
     if ([self.dataSource.items count] == 0) {
         self.myTableView.hidden = YES;
         [self addEmptyListLabel];
@@ -132,8 +140,9 @@
         textField.placeholder = @"URL";
     }];
     
+    LocalFilesManager *filesManager = [[LocalFilesManager alloc] init];
+    
     UIAlertAction *downloadAction = [UIAlertAction actionWithTitle:@"Download" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        LocalFilesManager *filesManager = [[LocalFilesManager alloc] init];
         [filesManager downloadFileFromServiceWithURL:alert.textFields.firstObject.text];
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {

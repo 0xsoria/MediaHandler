@@ -32,13 +32,13 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    MyTableViewCell *cell = [MyTableViewCell alloc];
-    NSString *itemByIndex = [self.items objectAtIndex:indexPath.row];
-    [cell cellConfig: itemByIndex];
+    MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"files" forIndexPath:indexPath];
+    NSURL *itemByIndex = [self.items objectAtIndex:indexPath.row];
+    NSString *fileName = [itemByIndex lastPathComponent];
+    
+    [cell cellConfig: fileName];
     
     return cell;
 }
-
-
 
 @end

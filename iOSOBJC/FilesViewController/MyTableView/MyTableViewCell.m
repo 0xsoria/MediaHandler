@@ -10,6 +10,16 @@
 
 @implementation MyTableViewCell
 
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self setBackgroundColor:[UIColor whiteColor]];
+    }
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -22,7 +32,7 @@
 }
 
 - (void)cellConfig:(NSString *)fileName {
-    self.nameOfTheFileLabel.text = fileName;
+    self.textLabel.text = fileName;
 }
 
 @end

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol HTTPServiceDelegate <NSObject>
 
 - (void)didStartDownloadingFile;
-- (void)didFinishDownloadingFileToURL:(NSURL *)temporaryLocation;
+- (void)didFinishDownloadingFileToURL:(NSURL *)temporaryLocation withName:(NSString *)name;
 - (void)didDownloadProgressStarted:(int64_t)justWrote totalWritten:(int64_t)totalWritten totalToBeWritten:(int64_t)total;
 
 @end

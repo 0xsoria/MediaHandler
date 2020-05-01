@@ -18,37 +18,41 @@
     return self;
 }
 
-- (void)loadFiles {
+- (NSArray *)loadFiles {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray *urls = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
-    //load files here
+    NSURL *documentsFolder = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
+    NSError *error;
+    NSArray *files = [fileManager contentsOfDirectoryAtURL:documentsFolder includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles error:&error];
     
+    return files;
 }
 
-- (void)saveFile:(NSURL *)fileURL {
+- (void)saveFile:(NSURL *)fileURL withFileName:(NSString *)fileName {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *myURL = [fileManager URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-    NSURL *savedURL = [myURL URLByAppendingPathComponent:fileURL.lastPathComponent];
-    //NSError *myError;
+    NSArray *urls = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+    NSURL *firstItem = [urls firstObject];
+    NSURL *itemPathToBeSaved = [firstItem URLByAppendingPathComponent:fileName];
     
-    NSData *contents = [NSData dataWithContentsOfURL:savedURL];
-    [contents writeToURL:savedURL atomically:YES];
+    NSData *fileData = [NSData dataWithContentsOfURL:fileURL];
     
-    //[fileManager moveItemAtURL:fileURL toURL:savedURL error:&myError];
+    [fileManager createFileAtPath:itemPathToBeSaved.path contents:fileData attributes:nil];
+    
+    NSLog(@"path %@", itemPathToBeSaved);
 }
 
 - (void)downloadFileFromServiceWithURL:(NSString *)url {
     MyService *service = [[MyService alloc] init];
     service.delegate = self;
-    [service fileDownloader:url];
+    NSString *path = [[NSURL URLWithString:url] lastPathComponent];
+    [service fileDownloader:url andFileName:path];
 }
 
 - (void)didStartDownloadingFile {
     NSLog(@"Started");
 }
 
-- (void)didFinishDownloadingFileToURL:(NSURL *)temporaryLocation {
-    [self saveFile:temporaryLocation];
+- (void)didFinishDownloadingFileToURL:(NSURL *)temporaryLocation withName:(NSString *)name {
+    [self saveFile:temporaryLocation withFileName:name];
 }
 
 - (void)didDownloadProgressStarted:(int64_t)justWrote totalWritten:(int64_t)totalWritten totalToBeWritten:(int64_t)totalToBeWritten {
