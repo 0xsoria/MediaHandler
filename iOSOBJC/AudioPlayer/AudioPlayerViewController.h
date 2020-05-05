@@ -13,8 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AudioPlayerViewController : UIViewController <AVAudioPlayerDelegate>
 
-@property NSString *fileURL;
+@property NSURL *fileURL;
 @property AudioDownloaderAndPlayer *downloader;
+
+- (instancetype)initWithFileName:(NSURL *)fileURL;
 
 @end
 

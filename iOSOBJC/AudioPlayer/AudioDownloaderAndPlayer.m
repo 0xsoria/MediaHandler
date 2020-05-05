@@ -10,8 +10,7 @@
 
 @implementation AudioDownloaderAndPlayer
 
-- (void)audioDownLoaderAndPlayer:(NSString *)urlString {
-    NSURL *url = [NSURL URLWithString:urlString];
+- (void)audioDownLoaderAndPlayer:(NSURL *)url {
     NSError *error;
     NSError *sessionError;
     

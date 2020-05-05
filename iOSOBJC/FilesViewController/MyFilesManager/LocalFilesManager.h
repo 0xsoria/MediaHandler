@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)saveFile:(NSURL *)fileURL withFileName:(NSString *)fileName;
 - (void)downloadFileFromServiceWithURL:(NSString *)url;
 - (void)deleteFileAtIndexPath:(NSInteger)index;
+- (NSURL *)loadFileAtIndex:(NSInteger)index;
 - (NSArray *)loadFiles;
 
 @end

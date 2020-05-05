@@ -220,4 +220,10 @@
     [self.filesManager deleteFileAtIndexPath:index];
 }
 
+- (void)didSelectRow:(NSInteger)row {
+    NSURL *file = [self.filesManager loadFileAtIndex:row];
+    UIViewController *audioPlayer = [[AudioPlayerViewController alloc] initWithFileName:file];
+    [self.navigationController pushViewController:audioPlayer animated:YES];
+}
+
 @end

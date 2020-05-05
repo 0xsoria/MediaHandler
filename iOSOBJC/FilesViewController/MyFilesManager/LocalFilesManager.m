@@ -18,6 +18,12 @@
     return self;
 }
 
+- (NSURL *)loadFileAtIndex:(NSInteger)index {
+    NSArray *files = [self loadFiles];
+    NSURL *url = [files objectAtIndex:index];
+    return url;
+}
+
 - (NSArray *)loadFiles {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *documentsFolder = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];

@@ -15,6 +15,14 @@
 
 @implementation AudioPlayerViewController
 
+- (instancetype)initWithFileName:(NSURL *)fileURL {
+    self = [super init];
+    if (self) {
+        self.fileURL = fileURL;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.downloader.player.delegate = self;

@@ -55,4 +55,8 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.delegate didSelectRow:indexPath.row];
+}
+
 @end

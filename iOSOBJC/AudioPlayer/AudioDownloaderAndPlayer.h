@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property AVAudioPlayer *player;
 @property AVAudioSession *audioSession;
 
-- (void)audioDownLoaderAndPlayer:(NSString *)urlString;
+- (void)audioDownLoaderAndPlayer:(NSURL *)url;
 - (void)playAudioFile;
 - (void)stopPlayingAudio;
 

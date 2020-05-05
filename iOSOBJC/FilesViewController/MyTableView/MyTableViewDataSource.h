@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MyTableViewDataSourceDelegate <NSObject>
 
 - (void)didDeleteAnItemAtIndex:(NSInteger)index;
+- (void)didSelectRow:(NSInteger)row;
 
 @end
 
