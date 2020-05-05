@@ -10,15 +10,17 @@
 
 @implementation MyTableViewCell
 
+//MARK: - Initializers
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         [self setBackgroundColor:[UIColor whiteColor]];
     }
     return self;
 }
+
+//MARK: - Methods
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -27,12 +29,14 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)cellConfig:(NSString *)fileName {
     self.textLabel.text = fileName;
+}
+
+- (void)addViewsToCell {
+    
 }
 
 @end

@@ -11,10 +11,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol MyTableViewDataSourceDelegate <NSObject>
+
+- (void)didDeleteAnItemAtIndex:(NSInteger)index;
+
+@end
+
 @interface MyTableViewDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
 @property (readwrite) NSMutableArray *items;
-
+@property (weak) id <MyTableViewDataSourceDelegate> delegate;
 
 - (instancetype)initWithItems:(NSArray *)items;
 

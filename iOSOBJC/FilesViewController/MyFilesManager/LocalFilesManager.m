@@ -27,6 +27,27 @@
     return files;
 }
 
+- (void)deleteFileAtIndexPath:(NSInteger)index {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *documentsFolder = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
+    NSError *error;
+    NSArray *files = [fileManager contentsOfDirectoryAtURL:documentsFolder includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles error:&error];
+    NSURL *url = [files objectAtIndex:index];
+    NSError *deleteError;
+    
+    BOOL isDeleted = [fileManager removeItemAtURL:url error:&deleteError];
+    if (isDeleted) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate didDeleteFile];
+        });
+    } else {
+        //error deleting file
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate didDeleteFile];
+        });
+    }
+}
+
 - (void)saveFile:(NSURL *)fileURL withFileName:(NSString *)fileName {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *urls = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
@@ -37,7 +58,9 @@
     
     [fileManager createFileAtPath:itemPathToBeSaved.path contents:fileData attributes:nil];
     
-    NSLog(@"path %@", itemPathToBeSaved);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.delegate didFinishDownloadingFileFromService];
+    });
 }
 
 - (void)downloadFileFromServiceWithURL:(NSString *)url {

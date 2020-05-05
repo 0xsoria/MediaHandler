@@ -41,4 +41,18 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSArray *indexes = [NSArray arrayWithObject:indexPath];
+        
+        [tableView beginUpdates];
+        [self.items removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:indexes withRowAnimation:UITableViewRowAnimationFade];
+        [tableView endUpdates];
+        
+        [self.delegate didDeleteAnItemAtIndex:indexPath.row];
+    }
+}
+
 @end

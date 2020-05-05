@@ -10,16 +10,18 @@
 #import "MyTableViewDataSource.h"
 #import "InputAuthorizationChecker.h"
 #import "PhotoVideoViewController.h"
+#import "LocalFilesManager.h"
+#import "InitialTableView.h"
 
-@interface MainViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface MainViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, LocalFilesManagerDelegate, MyTableViewDataSourceDelegate>
 
-@property UITableView *myTableView;
+@property InitialTableView *myTableView;
 @property UILabel *emptyListLabel;
 @property MyTableViewDataSource *dataSource;
+@property LocalFilesManager *filesManager;
 
 - (void)addNewItem;
 - (void)tableViewDataVerification;
-- (void)addTableView;
 - (void)addEmptyListLabel;
 - (void)getMediaFromLibrary;
 - (void)authorizationStatus;

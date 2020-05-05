@@ -21,6 +21,7 @@
 		151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151353402442C6CC001F5FA1 /* SettingsViewController.m */; };
 		151353452442C82E001F5FA1 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151353442442C82E001F5FA1 /* MainNavigationController.m */; };
 		15135349244363B4001F5FA1 /* InputAuthorizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 15135348244363B4001F5FA1 /* InputAuthorizationChecker.m */; };
+		152E6146245DF3980067A98F /* InitialTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152E6145245DF3980067A98F /* InitialTableView.m */; };
 		15422ADE24495CFF004A5B64 /* AudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */; };
 		15422AE224495D27004A5B64 /* AudioDownloaderAndPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */; };
 		155CEA5E2452772500FC9E56 /* HTTPServiceProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 155CEA5D2452772500FC9E56 /* HTTPServiceProtocol.m */; };
@@ -60,6 +61,8 @@
 		151353442442C82E001F5FA1 /* MainNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		15135347244363B4001F5FA1 /* InputAuthorizationChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputAuthorizationChecker.h; sourceTree = "<group>"; };
 		15135348244363B4001F5FA1 /* InputAuthorizationChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputAuthorizationChecker.m; sourceTree = "<group>"; };
+		152E6144245DF3980067A98F /* InitialTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitialTableView.h; sourceTree = "<group>"; };
+		152E6145245DF3980067A98F /* InitialTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitialTableView.m; sourceTree = "<group>"; };
 		15422ADC24495CFF004A5B64 /* AudioPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerViewController.h; sourceTree = "<group>"; };
 		15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerViewController.m; sourceTree = "<group>"; };
 		15422AE024495D27004A5B64 /* AudioDownloaderAndPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioDownloaderAndPlayer.h; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				1513532924427046001F5FA1 /* MyTableViewDataSource.m */,
 				1513532B24427FC3001F5FA1 /* MyTableViewCell.h */,
 				1513532C24427FC3001F5FA1 /* MyTableViewCell.m */,
+				152E6144245DF3980067A98F /* InitialTableView.h */,
+				152E6145245DF3980067A98F /* InitialTableView.m */,
 			);
 			path = MyTableView;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 				151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */,
 				15135349244363B4001F5FA1 /* InputAuthorizationChecker.m in Sources */,
 				151353452442C82E001F5FA1 /* MainNavigationController.m in Sources */,
+				152E6146245DF3980067A98F /* InitialTableView.m in Sources */,
 				15D892D32446A9980004CF99 /* AVPhotoView.m in Sources */,
 				1513531F243EA7BE001F5FA1 /* main.m in Sources */,
 				15135311243EA7BC001F5FA1 /* SceneDelegate.m in Sources */,

@@ -9,31 +9,31 @@
 #import "MainViewController.h"
 #import "MyTableViewDataSource.h"
 #import "AudioPlayerViewController.h"
-#import "LocalFilesManager.h"
 #import "MyTableViewCell.h"
-
-@interface MainViewController ()
-
-@end
 
 @implementation MainViewController
 
+//MARK: - Super Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.myTableView = [[UITableView alloc] init];
-    [self.myTableView registerClass:MyTableViewCell.self forCellReuseIdentifier:@"files"];
-    UIBarButtonItem *myRightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target: self action:@selector(addNewItem)];
-    [self.navigationItem setRightBarButtonItem:myRightBarButtonItem];
+    self.filesManager = [[LocalFilesManager alloc] init];
+    self.filesManager.delegate = self;
+    self.myTableView = [[InitialTableView alloc] init];
     
-    [self addTableView];
+    [self setupInterface];
     [self tableViewDataVerification];
 }
 
-- (void)addTableView {
+//MARK: - Methods
+
+- (void)setupInterface {
+    
+    UIBarButtonItem *myRightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target: self action:@selector(addNewItem)];
+    [self.navigationItem setRightBarButtonItem:myRightBarButtonItem];
+    
     [self.view addSubview:self.myTableView];
     [self.myTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
     [self.myTableView.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
     [self.myTableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
     [self.myTableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
@@ -41,9 +41,9 @@
 }
 
 - (void)tableViewDataVerification {
-    LocalFilesManager *filesManager = [[LocalFilesManager alloc] init];
-    NSArray *files = [filesManager loadFiles];
+    NSArray *files = [self.filesManager loadFiles];
     self.dataSource = [[MyTableViewDataSource alloc] initWithItems:files];
+    self.dataSource.delegate = self;
     self.myTableView.dataSource = self.dataSource;
     self.myTableView.delegate = self.dataSource;
     
@@ -51,6 +51,13 @@
         self.myTableView.hidden = YES;
         [self addEmptyListLabel];
     }
+}
+
+- (void)tableViewUpdate {
+    NSArray *files = [self.filesManager loadFiles];
+    NSMutableArray *mutable = [[NSMutableArray alloc] initWithArray:files];
+    [self.dataSource setItems:mutable];
+    [self.myTableView reloadData];
 }
 
 - (void)addEmptyListLabel {
@@ -140,10 +147,8 @@
         textField.placeholder = @"URL";
     }];
     
-    LocalFilesManager *filesManager = [[LocalFilesManager alloc] init];
-    
     UIAlertAction *downloadAction = [UIAlertAction actionWithTitle:@"Download" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [filesManager downloadFileFromServiceWithURL:alert.textFields.firstObject.text];
+        [self.filesManager downloadFileFromServiceWithURL:alert.textFields.firstObject.text];
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
@@ -184,8 +189,35 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
+//MARK: - UIImagePickerControllerDelegate
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
     NSLog(@"oi");
+}
+
+//MARK: - LocalFilesManagerDelegate
+
+- (void)didDeleteFile {
+    [self tableViewUpdate];
+}
+
+- (void)didStartDownloadingFileFromService {
+    
+}
+
+- (void)downloadFromServiceInProgressWithBytesWritten:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten andTotalBytesExpectedToWrite:(int64_t)totalExpected {
+    
+    
+}
+
+- (void)didFinishDownloadingFileFromService {
+    [self tableViewUpdate];
+}
+
+//MARK: - MyDataSourceDelegate
+
+- (void)didDeleteAnItemAtIndex:(NSInteger)index {
+    [self.filesManager deleteFileAtIndexPath:index];
 }
 
 @end

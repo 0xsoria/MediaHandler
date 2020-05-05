@@ -12,7 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MyTableViewCell : UITableViewCell
 
+@property UIStackView *itemsStack;
+@property UIImageView *itemImage;
 @property UILabel *nameOfTheFileLabel;
+@property UIProgressView *progressBar;
 
 - (void)cellConfig:(NSString *)fileName;
 
