@@ -29,6 +29,7 @@
 
 - (void)stopPlayingAudio {
     [self.player stop];
+    //finish session
 }
 
 @end

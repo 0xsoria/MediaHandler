@@ -10,6 +10,7 @@
 #import "MyTableViewDataSource.h"
 #import "AudioPlayerViewController.h"
 #import "MyTableViewCell.h"
+#import "PresentationObject.h"
 
 @implementation MainViewController
 
@@ -74,44 +75,42 @@
 }
 
 - (void)addNewItem {
-    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"What kind of file you want to add?" message:@"Choose what kind of file you would like to add." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *downloadAudio = [UIAlertAction actionWithTitle:@"Download Audio File" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self downloadFile];
+    __weak MainViewController *weakSelf = self;
+    PresentationObject *presenter = [[PresentationObject alloc] init];
+    [presenter presentNewItemAlertWithNavigationController:self.navigationController completion:^(MediaAction media) {
+        switch (media) {
+            case MediaActionDownloadAudio:
+                [weakSelf downloadFile];
+                break;
+            case MediaActionVideo:
+                break;
+            case MediaActionToneGenenerator:
+                [weakSelf toneGenerator];
+                break;
+            case MediaActionImageAction:
+                break;
+            case MediaActionAudioPlayer:
+                break;
+            case MediaActionPhotoAction:
+                break;
+            case MediaActionRecordVideo:
+                break;
+            case MediaActionRecordAudio:
+                break;
+            case MediaActionCancel:
+                break;
+        }
     }];
-    
-    UIAlertAction *videoAction = [UIAlertAction actionWithTitle:@"Video" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self authorizationStatus];
+}
+
+- (void)toneGenerator {
+    __weak MainViewController *weakSelf = self;
+    PresentationObject *presenter = [[PresentationObject alloc] init];
+    [presenter toneGeneratorPresenter:self.navigationController withDurationSampleRateAndFrequency:^(NSNumber * _Nonnull duration, NSNumber * _Nonnull sampleRate, NSNumber * _Nonnull frequency) {
+        ToneGenerator *toneGenerator = [[ToneGenerator alloc] init];
+        [toneGenerator toneGeneratorWithDuration:duration sampleRate:sampleRate frequency:frequency];
+        [weakSelf tableViewUpdate];
     }];
-    UIAlertAction *imageAction = [UIAlertAction actionWithTitle:@"Image" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self authorizationStatus];
-    }];
-    UIAlertAction *audioAction = [UIAlertAction actionWithTitle:@"Audio" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    UIAlertAction *photoAction = [UIAlertAction actionWithTitle:@"Take Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self cameraInputStatus:MediaInputTypePhoto];
-    }];
-    UIAlertAction *recordVideoAction = [UIAlertAction actionWithTitle:@"Record Video" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self cameraInputStatus:MediaInputTypeVideo];
-    }];
-    UIAlertAction *recordAudioAction = [UIAlertAction actionWithTitle:@"Record Audio" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    
-    [sheet addAction:downloadAudio];
-    [sheet addAction:imageAction];
-    [sheet addAction:videoAction];
-    [sheet addAction:audioAction];
-    [sheet addAction:photoAction];
-    [sheet addAction:recordVideoAction];
-    [sheet addAction:recordAudioAction];
-    [sheet addAction:cancelAction];
-    
-    [self.navigationController presentViewController:sheet animated:true completion: nil];
-    
 }
 
 - (void)cameraInputStatus:(MediaInputType)mediaInput {
@@ -142,44 +141,16 @@
 }
 
 - (void)downloadFile {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Place the url for the audio file" message:@"URL for file" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        textField.placeholder = @"URL";
-    }];
-    
-    UIAlertAction *downloadAction = [UIAlertAction actionWithTitle:@"Download" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self.filesManager downloadFileFromServiceWithURL:alert.textFields.firstObject.text];
-    }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    
-    [alert addAction:downloadAction];
-    [alert addAction:cancelAction];
-    
-    [self.navigationController presentViewController:alert animated:YES completion:^{
-        
+    __weak MainViewController *weakSelf = self;
+    PresentationObject *presenter = [[PresentationObject alloc] init];
+    [presenter presentFileDownloaderAlertWithNavigationController:self.navigationController completion:^(NSString * _Nonnull returnData) {
+        [weakSelf.filesManager downloadFileFromServiceWithURL:returnData];
     }];
 }
 
 - (void)noAccessAlert {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"You do not have access to the photo library, to give the access please go to settings. " preferredStyle:UIAlertControllerStyleAlert];
-    
-    NSDictionary *dict;
-    
-    UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:@"Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSURL *urlFromString = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-        [UIApplication.sharedApplication openURL:urlFromString options:dict completionHandler:nil];
-        
-    }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-    }];
-    
-    [alert addAction:settingsAction];
-    [alert addAction:cancel];
-    
-    [self.navigationController presentViewController:alert animated:TRUE completion:nil];
-    
+    PresentationObject *presenter = [[PresentationObject alloc] init];
+    [presenter noAccessAlert:self.navigationController];
 }
 
 - (void)getMediaFromLibrary {
@@ -223,7 +194,9 @@
 - (void)didSelectRow:(NSInteger)row {
     NSURL *file = [self.filesManager loadFileAtIndex:row];
     UIViewController *audioPlayer = [[AudioPlayerViewController alloc] initWithFileName:file];
-    [self.navigationController pushViewController:audioPlayer animated:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.navigationController presentViewController:audioPlayer animated:YES completion:nil];
+    });
 }
 
 @end

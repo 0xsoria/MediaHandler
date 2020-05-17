@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,11 +24,15 @@
 		152E6146245DF3980067A98F /* InitialTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152E6145245DF3980067A98F /* InitialTableView.m */; };
 		15422ADE24495CFF004A5B64 /* AudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */; };
 		15422AE224495D27004A5B64 /* AudioDownloaderAndPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */; };
+		1544F73C2471C2BE00FD69BB /* MyFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1544F73B2471C2BE00FD69BB /* MyFramework.xcframework */; };
+		154F5A562470C14200C6EF97 /* PresentationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 154F5A552470C14200C6EF97 /* PresentationObject.m */; };
+		154F5A592471750400C6EF97 /* ToneGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 154F5A582471750400C6EF97 /* ToneGenerator.m */; };
 		155CEA5E2452772500FC9E56 /* HTTPServiceProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 155CEA5D2452772500FC9E56 /* HTTPServiceProtocol.m */; };
 		155CEA9B24560B0B00FC9E56 /* HTTPServiceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 155CEA9A24560B0B00FC9E56 /* HTTPServiceDelegate.m */; };
 		155CEA9E2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 155CEA9D2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.m */; };
 		1577517F2443D9BC0098883A /* AVSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1577517E2443D9BC0098883A /* AVSession.m */; };
 		15775182244561CA0098883A /* PhotoVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15775181244561CA0098883A /* PhotoVideoViewController.m */; };
+		15A3773D2468C35500D2829F /* AudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A3773C2468C35500D2829F /* AudioPlayerView.m */; };
 		15D892D32446A9980004CF99 /* AVPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D892D22446A9980004CF99 /* AVPhotoView.m */; };
 		15DF69E2244FE297006F0D7F /* MyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DF69E1244FE297006F0D7F /* MyService.m */; };
 /* End PBXBuildFile section */
@@ -67,6 +71,11 @@
 		15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerViewController.m; sourceTree = "<group>"; };
 		15422AE024495D27004A5B64 /* AudioDownloaderAndPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioDownloaderAndPlayer.h; sourceTree = "<group>"; };
 		15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioDownloaderAndPlayer.m; sourceTree = "<group>"; };
+		1544F73B2471C2BE00FD69BB /* MyFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MyFramework.xcframework; sourceTree = "<group>"; };
+		154F5A542470C14200C6EF97 /* PresentationObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PresentationObject.h; path = Presentation/PresentationObject.h; sourceTree = "<group>"; };
+		154F5A552470C14200C6EF97 /* PresentationObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PresentationObject.m; path = Presentation/PresentationObject.m; sourceTree = "<group>"; };
+		154F5A572471750400C6EF97 /* ToneGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToneGenerator.h; sourceTree = "<group>"; };
+		154F5A582471750400C6EF97 /* ToneGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToneGenerator.m; sourceTree = "<group>"; };
 		155CEA5C2452772500FC9E56 /* HTTPServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPServiceProtocol.h; sourceTree = "<group>"; };
 		155CEA5D2452772500FC9E56 /* HTTPServiceProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPServiceProtocol.m; sourceTree = "<group>"; };
 		155CEA9924560B0B00FC9E56 /* HTTPServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPServiceDelegate.h; sourceTree = "<group>"; };
@@ -77,6 +86,8 @@
 		1577517E2443D9BC0098883A /* AVSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVSession.m; sourceTree = "<group>"; };
 		15775180244561CA0098883A /* PhotoVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoVideoViewController.h; sourceTree = "<group>"; };
 		15775181244561CA0098883A /* PhotoVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoVideoViewController.m; sourceTree = "<group>"; };
+		15A3773B2468C35500D2829F /* AudioPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerView.h; sourceTree = "<group>"; };
+		15A3773C2468C35500D2829F /* AudioPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerView.m; sourceTree = "<group>"; };
 		15D892D12446A9980004CF99 /* AVPhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPhotoView.h; sourceTree = "<group>"; };
 		15D892D22446A9980004CF99 /* AVPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPhotoView.m; sourceTree = "<group>"; };
 		15DF69E0244FE297006F0D7F /* MyService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyService.h; sourceTree = "<group>"; };
@@ -88,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1544F73C2471C2BE00FD69BB /* MyFramework.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				1513530B243EA7BC001F5FA1 /* iOSOBJC */,
+				154F5A4F2470BCF600C6EF97 /* Frameworks */,
 				1513530A243EA7BC001F5FA1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +138,7 @@
 				151353422442C6D1001F5FA1 /* SettingsViewController */,
 				15775183244567F60098883A /* PhotoVideoViewController */,
 				15422ADF24495D0A004A5B64 /* AudioPlayer */,
+				154F5A5A2471750E00C6EF97 /* ToneGenerator */,
 			);
 			path = iOSOBJC;
 			sourceTree = "<group>";
@@ -161,6 +175,8 @@
 				151353322442930E001F5FA1 /* MyFilesManager */,
 				151353382442B5F4001F5FA1 /* MyFilesModel */,
 				1513533E2442C0BA001F5FA1 /* TabBarController */,
+				154F5A542470C14200C6EF97 /* PresentationObject.h */,
+				154F5A552470C14200C6EF97 /* PresentationObject.m */,
 			);
 			path = FilesViewController;
 			sourceTree = "<group>";
@@ -245,8 +261,27 @@
 				15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */,
 				15422AE024495D27004A5B64 /* AudioDownloaderAndPlayer.h */,
 				15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */,
+				15A3773B2468C35500D2829F /* AudioPlayerView.h */,
+				15A3773C2468C35500D2829F /* AudioPlayerView.m */,
 			);
 			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		154F5A4F2470BCF600C6EF97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1544F73B2471C2BE00FD69BB /* MyFramework.xcframework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		154F5A5A2471750E00C6EF97 /* ToneGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				154F5A572471750400C6EF97 /* ToneGenerator.h */,
+				154F5A582471750400C6EF97 /* ToneGenerator.m */,
+			);
+			path = ToneGenerator;
 			sourceTree = "<group>";
 		};
 		15775183244567F60098883A /* PhotoVideoViewController */ = {
@@ -362,6 +397,7 @@
 			files = (
 				155CEA9B24560B0B00FC9E56 /* HTTPServiceDelegate.m in Sources */,
 				1513532A24427046001F5FA1 /* MyTableViewDataSource.m in Sources */,
+				154F5A562470C14200C6EF97 /* PresentationObject.m in Sources */,
 				15135314243EA7BC001F5FA1 /* MainViewController.m in Sources */,
 				1513530E243EA7BC001F5FA1 /* AppDelegate.m in Sources */,
 				1577517F2443D9BC0098883A /* AVSession.m in Sources */,
@@ -370,7 +406,9 @@
 				1513533124429309001F5FA1 /* LocalFilesManager.m in Sources */,
 				1513533D2442C0A3001F5FA1 /* MainTabBarController.m in Sources */,
 				1513532D24427FC3001F5FA1 /* MyTableViewCell.m in Sources */,
+				154F5A592471750400C6EF97 /* ToneGenerator.m in Sources */,
 				155CEA9E2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.m in Sources */,
+				15A3773D2468C35500D2829F /* AudioPlayerView.m in Sources */,
 				155CEA5E2452772500FC9E56 /* HTTPServiceProtocol.m in Sources */,
 				15422AE224495D27004A5B64 /* AudioDownloaderAndPlayer.m in Sources */,
 				151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */,
@@ -449,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -501,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

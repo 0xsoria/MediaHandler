@@ -26,6 +26,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.downloader.player.delegate = self;
+    self.view.backgroundColor = [UIColor redColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self downloadFileAndPlay];
 }
 
@@ -33,6 +38,10 @@
     self.downloader = [[AudioDownloaderAndPlayer alloc] init];
     [self.downloader audioDownLoaderAndPlayer:self.fileURL];
     [self.downloader playAudioFile];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.downloader stopPlayingAudio];
 }
 
 

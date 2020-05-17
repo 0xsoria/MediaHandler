@@ -12,6 +12,7 @@
 #import "PhotoVideoViewController.h"
 #import "LocalFilesManager.h"
 #import "InitialTableView.h"
+#import "ToneGenerator.h"
 
 @interface MainViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, LocalFilesManagerDelegate, MyTableViewDataSourceDelegate>
 
