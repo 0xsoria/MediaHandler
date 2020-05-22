@@ -1,3 +1,13 @@
-# Media Editor
+# Media Handler
 
-You can add photos, videos and audio records from your library to the app and also can record this kind of media directly from the app.
+Download audio files.
+
+Tone generator.
+
+Record audio (TBD).
+
+Record video (TBD).
+
+Check metadata of a file.
+
+(This project is under construction).
