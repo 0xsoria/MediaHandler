@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AudioDownloaderAndPlayer.h"
+#import <AudioKit/AudioKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -10,7 +10,14 @@
 
 @implementation PresentationObject
 
-- (void)toneGeneratorPresenter:(UINavigationController *)navigationController withDurationSampleRateAndFrequency:(void (^ __nullable)(NSNumber *, NSNumber *, NSNumber *))withDurationSampleRateAndFrequency {
+- (void)toneGeneratorError:(UINavigationController *)navigationController {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error in the tone generator!" message:@"Please input a real number" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:action];
+    [navigationController presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)toneGeneratorPresenter:(UINavigationController *)navigationController withDurationSampleRateAndFrequency:(void (^ __nullable)(NSNumber *, NSNumber *, NSNumber *, NSError *))withDurationSampleRateAndFrequency {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"This is a tone generator!" message:@"What is the frequency of the tone you want to generate" preferredStyle:UIAlertControllerStyleAlert];
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"Duration";
@@ -28,14 +35,23 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
     
-    
+    NSNumber *duration = [formatter numberFromString:alert.textFields.firstObject.text];
+    NSNumber *sampleRate = [formatter numberFromString:alert.textFields[1].text];
+    NSNumber *freq = [formatter numberFromString:alert.textFields[2].text];
     
     UIAlertAction *tone = [UIAlertAction actionWithTitle:@"Generate" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        withDurationSampleRateAndFrequency(
-                                           [formatter numberFromString:alert.textFields.firstObject.text],
-                                           [formatter numberFromString:alert.textFields[1].text],
-                                           [formatter numberFromString:alert.textFields[2].text]);
+        
+        if (duration != nil || sampleRate != nil || freq != nil) {
+            withDurationSampleRateAndFrequency(
+            duration,
+            sampleRate,
+            freq, nil);
+        }
+        NSError *myError = [NSError alloc];
+        withDurationSampleRateAndFrequency(nil, nil, nil, myError);
+        
     }];
+    
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     

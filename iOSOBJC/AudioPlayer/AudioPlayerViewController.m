@@ -27,6 +27,7 @@
     [super viewDidLoad];
     self.downloader.player.delegate = self;
     self.view.backgroundColor = [UIColor redColor];
+    [self setupViewContent];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -44,6 +45,22 @@
     [self.downloader stopPlayingAudio];
 }
 
+
+- (void)setupViewContent {
+    UIButton *centerButton = [[UIButton alloc] init];
+    [self.view addSubview:centerButton];
+    [centerButton setTitle:@"Info" forState:UIControlStateNormal];
+    [centerButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [centerButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [centerButton.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
+    [centerButton addTarget:self action:@selector(showMetadata) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)showMetadata {
+    AudioKitMetadata *metadata = [[AudioKitMetadata alloc] init];
+    NSDictionary *fileMetadata = [metadata getFileMetadataAt:[self.fileURL absoluteString]];
+    NSLog(@"%@", fileMetadata);
+}
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
     NSLog(@"Okay finished playing");

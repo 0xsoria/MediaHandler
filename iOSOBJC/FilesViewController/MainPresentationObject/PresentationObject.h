@@ -29,7 +29,9 @@ typedef NS_ENUM(NSInteger, MediaAction) {
 - (void)presentFileDownloaderAlertWithNavigationController:(UINavigationController *)navigationController completion:(void (^ __nullable)(NSString *))completion;
 - (void)noAccessAlert:(UINavigationController *)navigationController;
 
-- (void)toneGeneratorPresenter:(UINavigationController *)navigationController withDurationSampleRateAndFrequency:(void (^ __nullable)(NSNumber *, NSNumber *, NSNumber *))withDurationSampleRateAndFrequency;
+- (void)toneGeneratorPresenter:(UINavigationController *)navigationController withDurationSampleRateAndFrequency:(void (^ __nullable)(NSNumber *, NSNumber *, NSNumber *, NSError *))withDurationSampleRateAndFrequency;
+
+- (void)toneGeneratorError:(UINavigationController *)navigationController;
 
 
 @end

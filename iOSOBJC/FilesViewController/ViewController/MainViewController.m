@@ -106,10 +106,14 @@
 - (void)toneGenerator {
     __weak MainViewController *weakSelf = self;
     PresentationObject *presenter = [[PresentationObject alloc] init];
-    [presenter toneGeneratorPresenter:self.navigationController withDurationSampleRateAndFrequency:^(NSNumber * _Nonnull duration, NSNumber * _Nonnull sampleRate, NSNumber * _Nonnull frequency) {
-        ToneGenerator *toneGenerator = [[ToneGenerator alloc] init];
-        [toneGenerator toneGeneratorWithDuration:duration sampleRate:sampleRate frequency:frequency];
-        [weakSelf tableViewUpdate];
+    [presenter toneGeneratorPresenter:self.navigationController withDurationSampleRateAndFrequency:^(NSNumber * _Nonnull duration, NSNumber * _Nonnull sampleRate, NSNumber * _Nonnull frequency, NSError * _Nullable error) {
+        if (error == nil) {
+            ToneGenerator *toneGenerator = [[ToneGenerator alloc] init];
+            [toneGenerator toneGeneratorWithDuration:duration sampleRate:sampleRate frequency:frequency];
+            [weakSelf tableViewUpdate];
+            return;
+        }
+        [presenter toneGeneratorError:self.navigationController];
     }];
 }
 
