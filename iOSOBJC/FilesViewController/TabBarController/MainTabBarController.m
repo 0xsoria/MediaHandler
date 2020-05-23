@@ -7,9 +7,8 @@
 //
 
 #import "MainTabBarController.h"
-#import "MainViewController.h"
-#import "SettingsViewController.h"
-#import "MainNavigationController.h"
+#import "MainSplitViewController.h"
+#import "SettingsSplitViewController.h"
 
 @interface MainTabBarController ()
 
@@ -19,15 +18,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    MainViewController *myViewController = [[MainViewController alloc] init];
-    MainNavigationController *mainNavigation = [[MainNavigationController alloc] initWithRootViewController:myViewController];
     
-    SettingsViewController *settingsViewController = [[SettingsViewController alloc] init];
-    MainNavigationController *settingsNavigation = [[MainNavigationController alloc] initWithRootViewController:settingsViewController];
+    MainSplitViewController *main = [[MainSplitViewController alloc]init];
+    SettingsSplitViewController *settings = [[SettingsSplitViewController alloc]init];
     
-    NSArray *viewController = [[NSArray alloc] initWithObjects:mainNavigation, settingsNavigation, nil];
+    NSArray *viewController = [[NSArray alloc] initWithObjects:main, settings, nil];
     
     self.viewControllers = viewController;
+    
+    [self.tabBar.items.firstObject setTitle:@"Files"];
+    [self.tabBar.items[1] setTitle:@"Settings"];
 }
 
 @end

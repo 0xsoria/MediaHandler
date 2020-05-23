@@ -22,6 +22,10 @@
 		151353452442C82E001F5FA1 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 151353442442C82E001F5FA1 /* MainNavigationController.m */; };
 		15135349244363B4001F5FA1 /* InputAuthorizationChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 15135348244363B4001F5FA1 /* InputAuthorizationChecker.m */; };
 		152E6146245DF3980067A98F /* InitialTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152E6145245DF3980067A98F /* InitialTableView.m */; };
+		15408F182479952F00A3BAEF /* MainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15408F172479952F00A3BAEF /* MainDetailViewController.m */; };
+		15408F1C247995AA00A3BAEF /* MainSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15408F1B247995AA00A3BAEF /* MainSplitViewController.m */; };
+		15408F2024799A3200A3BAEF /* SettingsSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15408F1F24799A3200A3BAEF /* SettingsSplitViewController.m */; };
+		15408F2324799AAC00A3BAEF /* SettingsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15408F2224799AAC00A3BAEF /* SettingsDetailViewController.m */; };
 		15422ADE24495CFF004A5B64 /* AudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */; };
 		15422AE224495D27004A5B64 /* AudioDownloaderAndPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */; };
 		1544F73C2471C2BE00FD69BB /* MyFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1544F73B2471C2BE00FD69BB /* MyFramework.xcframework */; };
@@ -68,6 +72,14 @@
 		152E6144245DF3980067A98F /* InitialTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitialTableView.h; sourceTree = "<group>"; };
 		152E6145245DF3980067A98F /* InitialTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitialTableView.m; sourceTree = "<group>"; };
 		15408F1524795E4600A3BAEF /* iOSOBJC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSOBJC.entitlements; sourceTree = "<group>"; };
+		15408F162479952E00A3BAEF /* MainDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainDetailViewController.h; sourceTree = "<group>"; };
+		15408F172479952F00A3BAEF /* MainDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainDetailViewController.m; sourceTree = "<group>"; };
+		15408F1A247995AA00A3BAEF /* MainSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainSplitViewController.h; sourceTree = "<group>"; };
+		15408F1B247995AA00A3BAEF /* MainSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainSplitViewController.m; sourceTree = "<group>"; };
+		15408F1E24799A3200A3BAEF /* SettingsSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsSplitViewController.h; sourceTree = "<group>"; };
+		15408F1F24799A3200A3BAEF /* SettingsSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsSplitViewController.m; sourceTree = "<group>"; };
+		15408F2124799AAC00A3BAEF /* SettingsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsDetailViewController.h; sourceTree = "<group>"; };
+		15408F2224799AAC00A3BAEF /* SettingsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsDetailViewController.m; sourceTree = "<group>"; };
 		15422ADC24495CFF004A5B64 /* AudioPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerViewController.h; sourceTree = "<group>"; };
 		15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerViewController.m; sourceTree = "<group>"; };
 		15422AE024495D27004A5B64 /* AudioDownloaderAndPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioDownloaderAndPlayer.h; sourceTree = "<group>"; };
@@ -178,6 +190,8 @@
 				151353382442B5F4001F5FA1 /* MyFilesModel */,
 				1513533E2442C0BA001F5FA1 /* TabBarController */,
 				15408F142478511C00A3BAEF /* MainPresentationObject */,
+				15408F192479955500A3BAEF /* Detail */,
+				15408F1D247995AE00A3BAEF /* SplitView */,
 			);
 			path = FilesViewController;
 			sourceTree = "<group>";
@@ -233,6 +247,10 @@
 			children = (
 				1513533F2442C6CC001F5FA1 /* SettingsViewController.h */,
 				151353402442C6CC001F5FA1 /* SettingsViewController.m */,
+				15408F1E24799A3200A3BAEF /* SettingsSplitViewController.h */,
+				15408F1F24799A3200A3BAEF /* SettingsSplitViewController.m */,
+				15408F2124799AAC00A3BAEF /* SettingsDetailViewController.h */,
+				15408F2224799AAC00A3BAEF /* SettingsDetailViewController.m */,
 			);
 			path = SettingsViewController;
 			sourceTree = "<group>";
@@ -262,6 +280,24 @@
 				154F5A552470C14200C6EF97 /* PresentationObject.m */,
 			);
 			path = MainPresentationObject;
+			sourceTree = "<group>";
+		};
+		15408F192479955500A3BAEF /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				15408F162479952E00A3BAEF /* MainDetailViewController.h */,
+				15408F172479952F00A3BAEF /* MainDetailViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		15408F1D247995AE00A3BAEF /* SplitView */ = {
+			isa = PBXGroup;
+			children = (
+				15408F1A247995AA00A3BAEF /* MainSplitViewController.h */,
+				15408F1B247995AA00A3BAEF /* MainSplitViewController.m */,
+			);
+			path = SplitView;
 			sourceTree = "<group>";
 		};
 		15422ADF24495D0A004A5B64 /* AudioPlayer */ = {
@@ -409,7 +445,9 @@
 				1513532A24427046001F5FA1 /* MyTableViewDataSource.m in Sources */,
 				154F5A562470C14200C6EF97 /* PresentationObject.m in Sources */,
 				15135314243EA7BC001F5FA1 /* MainViewController.m in Sources */,
+				15408F2024799A3200A3BAEF /* SettingsSplitViewController.m in Sources */,
 				1513530E243EA7BC001F5FA1 /* AppDelegate.m in Sources */,
+				15408F2324799AAC00A3BAEF /* SettingsDetailViewController.m in Sources */,
 				1577517F2443D9BC0098883A /* AVSession.m in Sources */,
 				15422ADE24495CFF004A5B64 /* AudioPlayerViewController.m in Sources */,
 				151353372442B5EF001F5FA1 /* MyFilesModel.m in Sources */,
@@ -419,6 +457,7 @@
 				154F5A592471750400C6EF97 /* ToneGenerator.m in Sources */,
 				155CEA9E2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.m in Sources */,
 				15A3773D2468C35500D2829F /* AudioPlayerView.m in Sources */,
+				15408F182479952F00A3BAEF /* MainDetailViewController.m in Sources */,
 				155CEA5E2452772500FC9E56 /* HTTPServiceProtocol.m in Sources */,
 				15422AE224495D27004A5B64 /* AudioDownloaderAndPlayer.m in Sources */,
 				151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */,
@@ -426,6 +465,7 @@
 				151353452442C82E001F5FA1 /* MainNavigationController.m in Sources */,
 				152E6146245DF3980067A98F /* InitialTableView.m in Sources */,
 				15D892D32446A9980004CF99 /* AVPhotoView.m in Sources */,
+				15408F1C247995AA00A3BAEF /* MainSplitViewController.m in Sources */,
 				1513531F243EA7BE001F5FA1 /* main.m in Sources */,
 				15135311243EA7BC001F5FA1 /* SceneDelegate.m in Sources */,
 				15775182244561CA0098883A /* PhotoVideoViewController.m in Sources */,

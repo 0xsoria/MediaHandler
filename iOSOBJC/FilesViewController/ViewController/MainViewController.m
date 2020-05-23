@@ -9,7 +9,6 @@
 #import "MainViewController.h"
 #import "MyTableViewDataSource.h"
 #import "AudioPlayerViewController.h"
-#import "MyTableViewCell.h"
 #import "PresentationObject.h"
 
 @implementation MainViewController
@@ -24,6 +23,7 @@
     
     [self setupInterface];
     [self tableViewDataVerification];
+    [self.view setBackgroundColor:[UIColor systemBackgroundColor]];
 }
 
 //MARK: - Methods
@@ -59,6 +59,8 @@
     NSMutableArray *mutable = [[NSMutableArray alloc] initWithArray:files];
     [self.dataSource setItems:mutable];
     [self.myTableView reloadData];
+    [self.myTableView setHidden:NO];
+    [self removeEmptyListLabel];
 }
 
 - (void)addEmptyListLabel {
@@ -72,6 +74,10 @@
     [self.emptyListLabel.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-20].active = YES;
     [self.emptyListLabel.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
     [self.emptyListLabel.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
+}
+
+- (void)removeEmptyListLabel {
+    [self.emptyListLabel removeFromSuperview];
 }
 
 - (void)addNewItem {

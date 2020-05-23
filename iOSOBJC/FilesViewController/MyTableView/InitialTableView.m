@@ -14,6 +14,7 @@
     self = [super init];
     if (self) {
         [self registerClass:MyTableViewCell.self forCellReuseIdentifier:@"files"];
+        [self setBackgroundColor:[UIColor systemBackgroundColor]];
     }
     return self;
 }
