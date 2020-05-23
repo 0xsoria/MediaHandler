@@ -67,6 +67,7 @@
 		15135348244363B4001F5FA1 /* InputAuthorizationChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputAuthorizationChecker.m; sourceTree = "<group>"; };
 		152E6144245DF3980067A98F /* InitialTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitialTableView.h; sourceTree = "<group>"; };
 		152E6145245DF3980067A98F /* InitialTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitialTableView.m; sourceTree = "<group>"; };
+		15408F1524795E4600A3BAEF /* iOSOBJC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSOBJC.entitlements; sourceTree = "<group>"; };
 		15422ADC24495CFF004A5B64 /* AudioPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerViewController.h; sourceTree = "<group>"; };
 		15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerViewController.m; sourceTree = "<group>"; };
 		15422AE024495D27004A5B64 /* AudioDownloaderAndPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioDownloaderAndPlayer.h; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		1513530B243EA7BC001F5FA1 /* iOSOBJC */ = {
 			isa = PBXGroup;
 			children = (
+				15408F1524795E4600A3BAEF /* iOSOBJC.entitlements */,
 				15135318243EA7BE001F5FA1 /* Assets.xcassets */,
 				15422ADF24495D0A004A5B64 /* AudioPlayer */,
 				151353332442A3D5001F5FA1 /* FilesViewController */,
@@ -559,6 +561,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOSOBJC/iOSOBJC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H929RNU2C4;
 				INFOPLIST_FILE = iOSOBJC/Info.plist;
@@ -568,6 +571,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Gabriel-Soria-Souza.iOSOBJC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -576,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOSOBJC/iOSOBJC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H929RNU2C4;
 				INFOPLIST_FILE = iOSOBJC/Info.plist;
@@ -585,6 +590,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Gabriel-Soria-Souza.iOSOBJC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

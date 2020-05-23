@@ -9,10 +9,6 @@
 #import "AudioPlayerViewController.h"
 #import "AudioDownloaderAndPlayer.h"
 
-@interface AudioPlayerViewController ()
-
-@end
-
 @implementation AudioPlayerViewController
 
 - (instancetype)initWithFileName:(NSURL *)fileURL {

@@ -10,14 +10,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 
-//@protocol InputAuthorizerDelegate <NSObject>
-//@optional
-//- (void)didAuthorizeAccess;
-//- (void)didNotAuthorizeAccess;
-////- (void)something:(id)something didFinishLoadingItem:(id)item;
-////- (void)something:(id)something didFailWithError:(NSError *)error;
-//@end
-
 typedef NS_ENUM (NSInteger, MediaInputType) {
     MediaInputTypePhoto,
     MediaInputTypeVideo,
