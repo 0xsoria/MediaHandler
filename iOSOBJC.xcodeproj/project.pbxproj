@@ -27,7 +27,7 @@
 		15408F2024799A3200A3BAEF /* SettingsSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15408F1F24799A3200A3BAEF /* SettingsSplitViewController.m */; };
 		15408F2324799AAC00A3BAEF /* SettingsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15408F2224799AAC00A3BAEF /* SettingsDetailViewController.m */; };
 		15422ADE24495CFF004A5B64 /* AudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */; };
-		15422AE224495D27004A5B64 /* AudioDownloaderAndPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */; };
+		15422AE224495D27004A5B64 /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422AE124495D27004A5B64 /* AudioPlayer.m */; };
 		1544F73C2471C2BE00FD69BB /* MyFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1544F73B2471C2BE00FD69BB /* MyFramework.xcframework */; };
 		154F5A562470C14200C6EF97 /* PresentationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 154F5A552470C14200C6EF97 /* PresentationObject.m */; };
 		154F5A592471750400C6EF97 /* ToneGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 154F5A582471750400C6EF97 /* ToneGenerator.m */; };
@@ -82,8 +82,8 @@
 		15408F2224799AAC00A3BAEF /* SettingsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsDetailViewController.m; sourceTree = "<group>"; };
 		15422ADC24495CFF004A5B64 /* AudioPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerViewController.h; sourceTree = "<group>"; };
 		15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerViewController.m; sourceTree = "<group>"; };
-		15422AE024495D27004A5B64 /* AudioDownloaderAndPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioDownloaderAndPlayer.h; sourceTree = "<group>"; };
-		15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioDownloaderAndPlayer.m; sourceTree = "<group>"; };
+		15422AE024495D27004A5B64 /* AudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
+		15422AE124495D27004A5B64 /* AudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
 		1544F73B2471C2BE00FD69BB /* MyFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MyFramework.xcframework; sourceTree = "<group>"; };
 		154F5A542470C14200C6EF97 /* PresentationObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentationObject.h; sourceTree = "<group>"; };
 		154F5A552470C14200C6EF97 /* PresentationObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentationObject.m; sourceTree = "<group>"; };
@@ -305,8 +305,8 @@
 			children = (
 				15422ADC24495CFF004A5B64 /* AudioPlayerViewController.h */,
 				15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */,
-				15422AE024495D27004A5B64 /* AudioDownloaderAndPlayer.h */,
-				15422AE124495D27004A5B64 /* AudioDownloaderAndPlayer.m */,
+				15422AE024495D27004A5B64 /* AudioPlayer.h */,
+				15422AE124495D27004A5B64 /* AudioPlayer.m */,
 				15A3773B2468C35500D2829F /* AudioPlayerView.h */,
 				15A3773C2468C35500D2829F /* AudioPlayerView.m */,
 			);
@@ -459,7 +459,7 @@
 				15A3773D2468C35500D2829F /* AudioPlayerView.m in Sources */,
 				15408F182479952F00A3BAEF /* MainDetailViewController.m in Sources */,
 				155CEA5E2452772500FC9E56 /* HTTPServiceProtocol.m in Sources */,
-				15422AE224495D27004A5B64 /* AudioDownloaderAndPlayer.m in Sources */,
+				15422AE224495D27004A5B64 /* AudioPlayer.m in Sources */,
 				151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */,
 				15135349244363B4001F5FA1 /* InputAuthorizationChecker.m in Sources */,
 				151353452442C82E001F5FA1 /* MainNavigationController.m in Sources */,

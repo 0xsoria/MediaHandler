@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AudioDownloaderAndPlayer.h"
-#import <AudioKit/AudioKit.h>
+#import "AudioPlayer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AudioPlayerViewController : UIViewController <AVAudioPlayerDelegate>
+@interface AudioPlayerViewController : UIViewController <AudioPlayerDelegate>
 
 @property NSURL *fileURL;
-@property AudioDownloaderAndPlayer *downloader;
-
+@property AudioPlayer *player;
+@property UIProgressView *progressBar;
+@property CADisplayLink *updater;
 
 - (instancetype)initWithFileName:(NSURL *)fileURL;
 

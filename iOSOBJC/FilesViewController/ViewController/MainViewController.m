@@ -204,6 +204,7 @@
 - (void)didSelectRow:(NSInteger)row {
     NSURL *file = [self.filesManager loadFileAtIndex:row];
     UIViewController *audioPlayer = [[AudioPlayerViewController alloc] initWithFileName:file];
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.navigationController presentViewController:audioPlayer animated:YES completion:nil];
     });
