@@ -13,7 +13,7 @@
 
 - (void)toneGeneratorWithDuration:(NSNumber *)duration sampleRate:(NSNumber *)sampleRate frequency:(NSNumber *)frequency {
     AudioKitToneGenerator *toneGenerator = [[AudioKitToneGenerator alloc] init];
-    [toneGenerator toneGeneratorWithDuration:duration sampleRate:sampleRate frequency:frequency];
+    [toneGenerator toneGeneratorWithDuration:duration sampleRate:sampleRate frequency:frequency waveFormat:SquareWave andFileFormat:AIFFFormat];
 }
 
 @end

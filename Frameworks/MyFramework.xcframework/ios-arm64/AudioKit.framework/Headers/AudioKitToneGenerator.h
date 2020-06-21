@@ -11,12 +11,36 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, AudioFileFormat) {
+    AIFFFormat,
+    AIFCFormat,
+    WAVEFormat,
+    RF64Format,
+    MP3Format,
+    MP2Format,
+    MP1Format,
+    AC3Format,
+    AACFormat,
+    MPEG4Format,
+    M4AFormat,
+    M4BFormat,
+    CAFFormat,
+    Type3GPFormat,
+    Type3GP2Format,
+    AMRFormat,
+    FLACFormat,
+    LATMinLOASTType
+};
+
+typedef NS_ENUM(NSInteger, WaveFormat) {
+    SquareWave,
+    SawtoothWave,
+    SineWave
+};
+
 @interface AudioKitToneGenerator : NSObject
 
-@property NSNumber *duration;
-@property NSNumber *sampleRate;
-
-- (void)toneGeneratorWithDuration:(NSNumber *)duration sampleRate:(NSNumber *)sampleRate frequency:(NSNumber *)frequency;
+- (void)toneGeneratorWithDuration:(NSNumber *)duration sampleRate:(NSNumber *)sampleRate frequency:(NSNumber *)frequency waveFormat:(WaveFormat)waveFormat andFileFormat:(AudioFileFormat)fileFormat;
 
 @end
 

@@ -27,13 +27,12 @@
 		15408F2024799A3200A3BAEF /* SettingsSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15408F1F24799A3200A3BAEF /* SettingsSplitViewController.m */; };
 		15408F2324799AAC00A3BAEF /* SettingsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15408F2224799AAC00A3BAEF /* SettingsDetailViewController.m */; };
 		15422ADE24495CFF004A5B64 /* AudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */; };
-		15422AE224495D27004A5B64 /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 15422AE124495D27004A5B64 /* AudioPlayer.m */; };
-		1544F73C2471C2BE00FD69BB /* MyFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1544F73B2471C2BE00FD69BB /* MyFramework.xcframework */; };
 		154F5A562470C14200C6EF97 /* PresentationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 154F5A552470C14200C6EF97 /* PresentationObject.m */; };
 		154F5A592471750400C6EF97 /* ToneGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 154F5A582471750400C6EF97 /* ToneGenerator.m */; };
 		155CEA5E2452772500FC9E56 /* HTTPServiceProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 155CEA5D2452772500FC9E56 /* HTTPServiceProtocol.m */; };
 		155CEA9B24560B0B00FC9E56 /* HTTPServiceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 155CEA9A24560B0B00FC9E56 /* HTTPServiceDelegate.m */; };
 		155CEA9E2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 155CEA9D2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.m */; };
+		1568DB2C249EE8A300DA1E2A /* MyFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1568DB2B249EE8A300DA1E2A /* MyFramework.xcframework */; };
 		1577517F2443D9BC0098883A /* AVSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1577517E2443D9BC0098883A /* AVSession.m */; };
 		15775182244561CA0098883A /* PhotoVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15775181244561CA0098883A /* PhotoVideoViewController.m */; };
 		15A3773D2468C35500D2829F /* AudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A3773C2468C35500D2829F /* AudioPlayerView.m */; };
@@ -82,9 +81,6 @@
 		15408F2224799AAC00A3BAEF /* SettingsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsDetailViewController.m; sourceTree = "<group>"; };
 		15422ADC24495CFF004A5B64 /* AudioPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerViewController.h; sourceTree = "<group>"; };
 		15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerViewController.m; sourceTree = "<group>"; };
-		15422AE024495D27004A5B64 /* AudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
-		15422AE124495D27004A5B64 /* AudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
-		1544F73B2471C2BE00FD69BB /* MyFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MyFramework.xcframework; sourceTree = "<group>"; };
 		154F5A542470C14200C6EF97 /* PresentationObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentationObject.h; sourceTree = "<group>"; };
 		154F5A552470C14200C6EF97 /* PresentationObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentationObject.m; sourceTree = "<group>"; };
 		154F5A572471750400C6EF97 /* ToneGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToneGenerator.h; sourceTree = "<group>"; };
@@ -95,6 +91,7 @@
 		155CEA9A24560B0B00FC9E56 /* HTTPServiceDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPServiceDelegate.m; sourceTree = "<group>"; };
 		155CEA9C2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalFilesManagerProgressDelegate.h; sourceTree = "<group>"; };
 		155CEA9D2456297C00FC9E56 /* LocalFilesManagerProgressDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalFilesManagerProgressDelegate.m; sourceTree = "<group>"; };
+		1568DB2B249EE8A300DA1E2A /* MyFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MyFramework.xcframework; sourceTree = "<group>"; };
 		1577517D2443D9BC0098883A /* AVSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVSession.h; sourceTree = "<group>"; };
 		1577517E2443D9BC0098883A /* AVSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVSession.m; sourceTree = "<group>"; };
 		15775180244561CA0098883A /* PhotoVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoVideoViewController.h; sourceTree = "<group>"; };
@@ -112,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1544F73C2471C2BE00FD69BB /* MyFramework.xcframework in Frameworks */,
+				1568DB2C249EE8A300DA1E2A /* MyFramework.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,8 +302,6 @@
 			children = (
 				15422ADC24495CFF004A5B64 /* AudioPlayerViewController.h */,
 				15422ADD24495CFF004A5B64 /* AudioPlayerViewController.m */,
-				15422AE024495D27004A5B64 /* AudioPlayer.h */,
-				15422AE124495D27004A5B64 /* AudioPlayer.m */,
 				15A3773B2468C35500D2829F /* AudioPlayerView.h */,
 				15A3773C2468C35500D2829F /* AudioPlayerView.m */,
 			);
@@ -316,7 +311,7 @@
 		154F5A4F2470BCF600C6EF97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1544F73B2471C2BE00FD69BB /* MyFramework.xcframework */,
+				1568DB2B249EE8A300DA1E2A /* MyFramework.xcframework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -459,7 +454,6 @@
 				15A3773D2468C35500D2829F /* AudioPlayerView.m in Sources */,
 				15408F182479952F00A3BAEF /* MainDetailViewController.m in Sources */,
 				155CEA5E2452772500FC9E56 /* HTTPServiceProtocol.m in Sources */,
-				15422AE224495D27004A5B64 /* AudioPlayer.m in Sources */,
 				151353412442C6CC001F5FA1 /* SettingsViewController.m in Sources */,
 				15135349244363B4001F5FA1 /* InputAuthorizationChecker.m in Sources */,
 				151353452442C82E001F5FA1 /* MainNavigationController.m in Sources */,

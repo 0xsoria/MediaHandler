@@ -31,9 +31,8 @@
 }
 
 - (void)downloadFileAndPlay {
-    self.player = [[AudioPlayer alloc] initWith];
+    self.player = [[AudioKitAudioPlayer alloc] initWithAudioFileURL:self.fileURL];
     self.player.delegate = self;
-    [self.player audioDownLoaderAndPlayer:self.fileURL];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

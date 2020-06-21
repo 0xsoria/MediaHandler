@@ -10,39 +10,43 @@
 		</data>
 		<key>Headers/AudioKit.h</key>
 		<data>
-		ldK3KHfNiX0bihwuhkJBXdPPXNU=
+		F3z9omW1bhzhZduSxVgI1yeKe64=
+		</data>
+		<key>Headers/AudioKitAudioPlayer.h</key>
+		<data>
+		s1LzcipqO/rQEVOrI6wNuSTNdc8=
 		</data>
 		<key>Headers/AudioKitToneGenerator.h</key>
 		<data>
-		n/j7O1dhik+BD2UqOsQ3wc+A8vc=
+		vY8zRX5IqVQ5+iLNzchiki1sDXE=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		WVul6/mXnbn0wae7QI2HV+DaYI0=
+		euw8lFMGLgAZZWKddlwcyhwhENU=
 		</data>
 		<key>Modules/AudioKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		ClyOPedMxQj3l4Oj/ODnz/UNz84=
+		G4noDgLRicTAPGwU7l8KBTLkkCM=
 		</data>
 		<key>Modules/AudioKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		CCPHUugtt1kimY+CIl17g1msvT4=
+		1iEQ5Wpi7WwIUDPDvKWrz7EuJLk=
 		</data>
 		<key>Modules/AudioKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		lHK8gR+/cqEbAIY/MytC567jXts=
+		9NdIzpn+USAGd/GnsN4vYmSLujA=
 		</data>
 		<key>Modules/AudioKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		ClyOPedMxQj3l4Oj/ODnz/UNz84=
+		G4noDgLRicTAPGwU7l8KBTLkkCM=
 		</data>
 		<key>Modules/AudioKit.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		CCPHUugtt1kimY+CIl17g1msvT4=
+		1iEQ5Wpi7WwIUDPDvKWrz7EuJLk=
 		</data>
 		<key>Modules/AudioKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		lHK8gR+/cqEbAIY/MytC567jXts=
+		9NdIzpn+USAGd/GnsN4vYmSLujA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -62,56 +66,63 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			styCe7CstloGN9vfos57xgWx+DetUejMRQNq49v62AY=
+			2r2NIdpP89U38j1c055F0OXkNUqjKDXjJqloRiD0irM=
+			</data>
+		</dict>
+		<key>Headers/AudioKitAudioPlayer.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QtuuwwL4X6hu8uT8BcRFdGDh8pOXNcrDxMXs4k0/WNI=
 			</data>
 		</dict>
 		<key>Headers/AudioKitToneGenerator.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3JmW7f9nqDMfd+aGL5yVNVptqci0oUhqZA2UfcvVw7w=
+			bDS+WgfLXIB7Usfm2EUKX86sdKGInfUjTt8P5PN+/zI=
 			</data>
 		</dict>
 		<key>Modules/AudioKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KYkbJummSGk/q0xLLA1DouBRYlggS9y5U+WMx99a79s=
+			VVkgh2HQa7+xO6MR6UXcDN1Nl7meN9JGihMnjvrOK+U=
 			</data>
 		</dict>
 		<key>Modules/AudioKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bP/yGmwfc7F0Np6LwGEn6GM+r6pRWHlpJIY8XTluV8w=
+			/bQwTIApzyFqthRpoEet+8vMqJ5KUFpc7MnRM/un1Gw=
 			</data>
 		</dict>
 		<key>Modules/AudioKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3rJV3rCtKbnctK/vW3o0njb6Z3NyKwTV8TkTCsg3TLs=
+			GOiegKovigZOMyVWzxh1rLzJNVsdjVUL6e5NV8gPWYQ=
 			</data>
 		</dict>
 		<key>Modules/AudioKit.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KYkbJummSGk/q0xLLA1DouBRYlggS9y5U+WMx99a79s=
+			VVkgh2HQa7+xO6MR6UXcDN1Nl7meN9JGihMnjvrOK+U=
 			</data>
 		</dict>
 		<key>Modules/AudioKit.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bP/yGmwfc7F0Np6LwGEn6GM+r6pRWHlpJIY8XTluV8w=
+			/bQwTIApzyFqthRpoEet+8vMqJ5KUFpc7MnRM/un1Gw=
 			</data>
 		</dict>
 		<key>Modules/AudioKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3rJV3rCtKbnctK/vW3o0njb6Z3NyKwTV8TkTCsg3TLs=
+			GOiegKovigZOMyVWzxh1rLzJNVsdjVUL6e5NV8gPWYQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

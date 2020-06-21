@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AudioPlayer.h"
+#import <AudioKit/AudioKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AudioPlayerViewController : UIViewController <AudioPlayerDelegate>
+@interface AudioPlayerViewController : UIViewController <AudioKitAudioPlayerDelegate>
 
 @property NSURL *fileURL;
-@property AudioPlayer *player;
+@property AudioKitAudioPlayer *player;
 @property UIProgressView *progressBar;
 @property CADisplayLink *updater;
 

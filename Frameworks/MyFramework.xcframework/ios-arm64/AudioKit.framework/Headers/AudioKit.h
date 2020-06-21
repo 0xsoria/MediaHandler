@@ -4,10 +4,11 @@
 //
 //  Created by Gabriel Soria Souza on 11/05/20.
 //  Copyright © 2020 Gabriel Sória Souza. All rights reserved.
-//
+//down
 
 #import <Foundation/Foundation.h>
 #import "AudioKitToneGenerator.h"
+#import "AudioKitAudioPlayer.h"
 
 //! Project version number for AudioKit.
 FOUNDATION_EXPORT double AudioKitVersionNumber;
